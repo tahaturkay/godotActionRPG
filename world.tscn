@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://5nrnwvxsmuph"]
+
+[ext_resource type="PackedScene" uid="uid://dsd34kd1pceex" path="res://player/player.tscn" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://8ns8y3tamm36" path="res://world/grass_background.png" id="1_fj7yv"]
+
+[node name="World" type="Node2D" unique_id=84175743]
+
+[node name="GrassBackground" type="TextureRect" parent="." unique_id=1247416003]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_fj7yv")
+stretch_mode = 1
+
+[node name="Player" parent="." unique_id=518857167 instance=ExtResource("1_f3sb7")]
+position = Vector2(87, 60)
+
+[node name="Camera2D" parent="Player" index="3" unique_id=91222505]
+process_callback = 0
+
+[editable path="Player"]
