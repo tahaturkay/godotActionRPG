@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bgostxwteaxyu" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d1ccrq8tw1qyv" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://cqq1j3idc7wnt" path="res://shadows/medium_shadow.png" id="3_g1dw6"]
 
 [sub_resource type="Animation" id="Animation_rkbax"]
 length = 0.6
@@ -493,3 +494,9 @@ position_smoothing_enabled = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=822914838]
 position = Vector2(-1, -4)
 polygon = PackedVector2Array(1, -8, -6, 2, 1, 9, 8, 2)
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="." unique_id=123731834]
+show_behind_parent = true
+position = Vector2(-0.5, 4)
+scale = Vector2(1.0625, 1)
+texture = ExtResource("3_g1dw6")
