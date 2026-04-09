@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	"""
 	match state: 
 		"MoveState": move_state(delta) # AnimationTree'de "MoveState" içindeysek eğer.
-		"AttackState":pass
+		"AttackState":move_state(delta) ## geçici olarak yazdım düzelticem
 		"RollState": roll_state(delta)
 			
 			
@@ -50,8 +50,8 @@ func move_state(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"): # Attack inputu girildiyse
 		playback.travel("AttackState") # AttackState'ye geçiyoruz.
 	
-	if Input.is_action_just_pressed("roll"):
-		playback.travel("RollState")
+	if Input.is_action_just_pressed("roll"): # Roll inputu girildiyse
+		playback.travel("RollState") # RollState'ye geçiyoruz.
 	
 	velocity = input_vector * speed # Hız güncellemesi
 	move_and_slide()

@@ -470,6 +470,7 @@ motion_mode = 1
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1550657062]
+position = Vector2(0, -6)
 texture = ExtResource("1_oul6g")
 hframes = 60
 
@@ -486,4 +487,9 @@ parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.0005685
 parameters/StateMachine/RollState/blend_position = Vector2(-0.029715002, 0.084233284)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=91222505]
+position = Vector2(0, -6)
 position_smoothing_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=822914838]
+position = Vector2(-1, -4)
+polygon = PackedVector2Array(1, -8, -6, 2, 1, 9, 8, 2)

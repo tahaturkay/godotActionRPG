@@ -2,19 +2,104 @@
 
 [ext_resource type="PackedScene" uid="uid://dsd34kd1pceex" path="res://player/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://8ns8y3tamm36" path="res://world/grass_background.png" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://do3obkbheujmy" path="res://world/bush.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://b8m0dvo8wpf2h" path="res://world/tree.tscn" id="4_aqk2v"]
 
 [node name="World" type="Node2D" unique_id=84175743]
+y_sort_enabled = true
 
-[node name="GrassBackground" type="TextureRect" parent="." unique_id=1247416003]
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=6762173]
+repeat_size = Vector2(320, 180)
+
+[node name="GrassBackground" type="TextureRect" parent="Parallax2D" unique_id=1247416003]
 offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("1_fj7yv")
 stretch_mode = 1
 
 [node name="Player" parent="." unique_id=518857167 instance=ExtResource("1_f3sb7")]
-position = Vector2(87, 60)
+position = Vector2(312, 136)
+
+[node name="Sprite2D" parent="Player" index="0" unique_id=1550657062]
+position = Vector2(0, -8)
 
 [node name="Camera2D" parent="Player" index="3" unique_id=91222505]
 process_callback = 0
+
+[node name="CollisionPolygon2D" parent="Player" index="4" unique_id=822914838]
+position = Vector2(0, -8)
+polygon = PackedVector2Array(0, -8, -8, 8, 8, 8)
+
+[node name="Bush" parent="." unique_id=408684939 instance=ExtResource("3_tlwt5")]
+position = Vector2(104, 168)
+
+[node name="Bush2" parent="." unique_id=1709827726 instance=ExtResource("3_tlwt5")]
+position = Vector2(416, 184)
+
+[node name="Bush3" parent="." unique_id=140991155 instance=ExtResource("3_tlwt5")]
+position = Vector2(56, 304)
+
+[node name="Bush4" parent="." unique_id=870509043 instance=ExtResource("3_tlwt5")]
+position = Vector2(552, 152)
+
+[node name="Bush5" parent="." unique_id=1832914994 instance=ExtResource("3_tlwt5")]
+position = Vector2(376, 304)
+
+[node name="Bush6" parent="." unique_id=1437025167 instance=ExtResource("3_tlwt5")]
+position = Vector2(208, 64)
+
+[node name="Bush7" parent="." unique_id=956505527 instance=ExtResource("3_tlwt5")]
+position = Vector2(512, 240)
+
+[node name="Bush8" parent="." unique_id=269653715 instance=ExtResource("3_tlwt5")]
+position = Vector2(224, 280)
+
+[node name="Bush9" parent="." unique_id=1243982475 instance=ExtResource("3_tlwt5")]
+position = Vector2(592, 312)
+
+[node name="Bush10" parent="." unique_id=979632884 instance=ExtResource("3_tlwt5")]
+position = Vector2(152, 88)
+
+[node name="Tree" parent="." unique_id=753980511 instance=ExtResource("4_aqk2v")]
+position = Vector2(144, 240)
+
+[node name="Tree2" parent="." unique_id=1987647988 instance=ExtResource("4_aqk2v")]
+position = Vector2(512, 40)
+
+[node name="Tree3" parent="." unique_id=427717715 instance=ExtResource("4_aqk2v")]
+position = Vector2(368, 56)
+
+[node name="Tree4" parent="." unique_id=1333374179 instance=ExtResource("4_aqk2v")]
+position = Vector2(32, 184)
+
+[node name="Tree5" parent="." unique_id=107077975 instance=ExtResource("4_aqk2v")]
+position = Vector2(64, 64)
+
+[node name="Tree6" parent="." unique_id=1463218501 instance=ExtResource("4_aqk2v")]
+position = Vector2(184, 144)
+
+[node name="Tree7" parent="." unique_id=736393671 instance=ExtResource("4_aqk2v")]
+position = Vector2(304, 232)
+
+[node name="Tree8" parent="." unique_id=1872322883 instance=ExtResource("4_aqk2v")]
+position = Vector2(456, 104)
+
+[node name="Tree9" parent="." unique_id=408521130 instance=ExtResource("4_aqk2v")]
+position = Vector2(592, 80)
+
+[node name="Tree10" parent="." unique_id=1310891298 instance=ExtResource("4_aqk2v")]
+position = Vector2(600, 224)
+
+[node name="Tree11" parent="." unique_id=1931379332 instance=ExtResource("4_aqk2v")]
+position = Vector2(496, 296)
+
+[node name="Tree12" parent="." unique_id=1070009055 instance=ExtResource("4_aqk2v")]
+position = Vector2(296, 328)
+
+[node name="Tree13" parent="." unique_id=1912287531 instance=ExtResource("4_aqk2v")]
+position = Vector2(280, 16)
+
+[node name="Tree14" parent="." unique_id=183523243 instance=ExtResource("4_aqk2v")]
+position = Vector2(152, 16)
 
 [editable path="Player"]
