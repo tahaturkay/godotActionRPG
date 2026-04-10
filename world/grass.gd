@@ -1,6 +1,8 @@
 extends Node2D
 @export var area_2d: Area2D # option + drag ile Area2D'yi buraya attık.
 
+const grass_effect = preload("res://effects/grass_effect.tscn") # effects'teki grass effecte eriştik
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area_2d.area_entered.connect(_on_area_2d_area_entered)
@@ -10,6 +12,10 @@ func _ready() -> void:
 # Amacı areaya girildiğinde notification yollaması
 func _on_area_2d_area_entered(other_area_2D: Area2D) -> void:
 	# print("Grass area entered")
+	var grass_effect_instance = grass_effect.instantiate() #Scene file'yi alıp node olarak instantiate ediyoruz
+	get_tree().current_scene.add_child(grass_effect_instance) #Sahneye child node olarak ekliyoruz (world)
+	grass_effect_instance.global_position = global_position # grass'ın global positionunu grass_effect'in pozisyonuna atıyoruz
+	
 	queue_free()
 
 """
