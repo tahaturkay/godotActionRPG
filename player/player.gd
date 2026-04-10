@@ -56,7 +56,7 @@ func move_state(delta: float) -> void:
 	velocity = input_vector * speed # Hız güncellemesi
 	move_and_slide()
 func roll_state(delta: float) -> void:
-	velocity = last_input_vector * rollSpeed
+	velocity = last_input_vector.normalized() * rollSpeed
 	move_and_slide()
 func _update_blend_positions(direction_vector: Vector2) -> void: # Gelen directiovector'e göre tüm blend_position'lar güncelleniyor.
 		animation_tree.set("parameters/StateMachine/MoveState/RunState/blend_position",direction_vector) #Animationdaki blend positionu güncelledik
