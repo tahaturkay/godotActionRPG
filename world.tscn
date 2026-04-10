@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://do3obkbheujmy" path="res://world/bush.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://b8m0dvo8wpf2h" path="res://world/tree.tscn" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cek4ot35cssrp" path="res://world/dirt_tileset.png" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://2v2jfkesex6i" path="res://world/grass.tscn" id="7_pkg7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbse"]
 texture = ExtResource("5_036b0")
@@ -452,5 +453,44 @@ position = Vector2(280, 16)
 
 [node name="Tree14" parent="." unique_id=183523243 instance=ExtResource("4_aqk2v")]
 position = Vector2(152, 16)
+
+[node name="Grass" parent="." unique_id=327305491 instance=ExtResource("7_pkg7o")]
+position = Vector2(328, 72)
+
+[node name="Grass2" parent="." unique_id=1857740951 instance=ExtResource("7_pkg7o")]
+position = Vector2(344, 72)
+
+[node name="Grass3" parent="." unique_id=1943700635 instance=ExtResource("7_pkg7o")]
+position = Vector2(328, 88)
+
+[node name="Grass4" parent="." unique_id=340188564 instance=ExtResource("7_pkg7o")]
+position = Vector2(344, 88)
+
+[node name="Grass5" parent="." unique_id=391969179 instance=ExtResource("7_pkg7o")]
+position = Vector2(232, 120)
+
+[node name="Grass6" parent="." unique_id=1490475826 instance=ExtResource("7_pkg7o")]
+position = Vector2(232, 136)
+
+[node name="Grass7" parent="." unique_id=340388060 instance=ExtResource("7_pkg7o")]
+position = Vector2(248, 136)
+
+[node name="Grass8" parent="." unique_id=56548344 instance=ExtResource("7_pkg7o")]
+position = Vector2(232, 152)
+
+[node name="Grass9" parent="." unique_id=2116866353 instance=ExtResource("7_pkg7o")]
+position = Vector2(536, 104)
+
+[node name="Grass10" parent="." unique_id=160601256 instance=ExtResource("7_pkg7o")]
+position = Vector2(552, 104)
+
+[node name="Grass11" parent="." unique_id=909597661 instance=ExtResource("7_pkg7o")]
+position = Vector2(552, 88)
+
+[node name="Grass12" parent="." unique_id=262156520 instance=ExtResource("7_pkg7o")]
+position = Vector2(568, 72)
+
+[node name="Grass13" parent="." unique_id=1528779787 instance=ExtResource("7_pkg7o")]
+position = Vector2(568, 88)
 
 [editable path="Player"]
