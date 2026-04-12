@@ -19,19 +19,19 @@ func _physics_process(delta: float) -> void:
 	"""
 	# match ile çoklu koşul kontrolü yapılabilir if-else'den ziyade
 	match [current_state, is_on_floor()]:
-	    [State.IDLE, true]:
-	        print("Yerde duruyor")
-	    [State.RUN, true]:
-	        print("Yerde koşuyor")
-	    [State.JUMP, false]:
-	        print("Havada zıplıyor")
+		[State.IDLE, true]:
+			print("Yerde duruyor")
+		[State.RUN, true]:
+			print("Yerde koşuyor")
+		[State.JUMP, false]:
+			print("Havada zıplıyor")
 	========================================
 	match current_state: # Birden fazla state kontrolü
-    State.IDLE, State.RUN:
-        # Hem IDLE hem de RUN durumunda çalışır
-        check_for_jump_input()
-    State.ATTACK:
-        attack_enemy()
+	State.IDLE, State.RUN:
+		# Hem IDLE hem de RUN durumunda çalışır
+		check_for_jump_input()
+	State.ATTACK:
+		attack_enemy()
 	"""
 	match state: 
 		"MoveState": move_state(delta) # AnimationTree'de "MoveState" içindeysek eğer.

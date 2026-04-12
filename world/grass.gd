@@ -16,7 +16,7 @@ func _on_area_2d_area_entered(other_area_2D: Area2D) -> void:
 	get_tree().current_scene.add_child(grass_effect_instance) #Sahneye child node olarak ekliyoruz (world)
 	grass_effect_instance.global_position = global_position # grass'ın global positionunu grass_effect'in pozisyonuna atıyoruz
 	
-	queue_free()
+	queue_free() # Ortadan kaldırıyor mevcut spriteyi
 
 """
 Godotta signal-up / call-down mantığı var.
