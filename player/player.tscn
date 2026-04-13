@@ -518,12 +518,12 @@ states/RollState/node = SubResource("AnimationNodeBlendSpace2D_e7oew")
 states/RollState/position = Vector2(560.50757, 26.5)
 states/Start/position = Vector2(322, 146.25)
 transitions = ["Start", "MoveState", SubResource("AnimationNodeStateMachineTransition_8t03j"), "MoveState", "AttackState", SubResource("AnimationNodeStateMachineTransition_rkbax"), "AttackState", "MoveState", SubResource("AnimationNodeStateMachineTransition_g1dw6"), "MoveState", "RollState", SubResource("AnimationNodeStateMachineTransition_c35mf"), "RollState", "MoveState", SubResource("AnimationNodeStateMachineTransition_65viv")]
-graph_offset = Vector2(67.51517, 12)
+graph_offset = Vector2(127.51517, -14)
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_g1dw6"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ebec5"]
-graph_offset = Vector2(-182.53662, 129.52957)
+graph_offset = Vector2(-204, 66)
 nodes/output/position = Vector2(490, 170)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_2ieo8")
 nodes/StateMachine/position = Vector2(-10, 140)

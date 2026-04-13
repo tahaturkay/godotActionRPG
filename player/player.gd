@@ -11,10 +11,10 @@ var last_input_vector: = Vector2.ZERO
 var playback: AnimationNodeStateMachinePlayback #onready olsaydı animation_tree hazır olmadan bunu açmaya çalışıcaktı
 func _ready() -> void: 
 	animation_tree.active = true 
-	playback = animation_tree.get("parameters/StateMachine/playback")
+	playback = animation_tree.get("parameters/StateMachine/playback") # Animation_tree deki statemachine içindeki stateler'i playback kapsıyor
 
 func _physics_process(delta: float) -> void:
-	var state = playback.get_current_node() # State string olarak döndürülüyor 
+	var state = playback.get_current_node() # State string olarak döndürülüyor (yukardaki playbackteki current stateyi okuyoruz)
 	
 	"""
 	# match ile çoklu koşul kontrolü yapılabilir if-else'den ziyade
@@ -33,13 +33,13 @@ func _physics_process(delta: float) -> void:
 	State.ATTACK:
 		attack_enemy()
 	"""
-	match state: 
+	match state: # uzun statelerde if else'den daha performanslı 'match state' kontrolü
 		"MoveState": move_state(delta) # AnimationTree'de "MoveState" içindeysek eğer.
-		"AttackState":move_state(delta) ## geçici olarak yazdım düzelticem
+		"AttackState":move_state(delta) # geçici olarak yazdım düzelticem
 		"RollState": roll_state(delta)
 			
 			
-func move_state(delta: float) -> void:
+func move_state(delta: float) -> void: # Hareket durumu fonksiyonu
 	input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if input_vector != Vector2.ZERO: # Herhangi bir move inputu girildiyse
@@ -57,6 +57,11 @@ func move_state(delta: float) -> void:
 	move_and_slide()
 func roll_state(delta: float) -> void:
 	velocity = last_input_vector.normalized() * rollSpeed
+	"""
+	normalized dememizin sebebi mesela joystick gibi -1,1 aralığında hassas
+	değerler girildiğinde roll yapıldığında düşük hızda roll atıyor karakter
+	onu normalized ederek direkt çemberin yarıçapına eşit değer alınıyor roll atılırken.
+	"""
 	move_and_slide()
 func _update_blend_positions(direction_vector: Vector2) -> void: # Gelen directiovector'e göre tüm blend_position'lar güncelleniyor.
 		animation_tree.set("parameters/StateMachine/MoveState/RunState/blend_position",direction_vector) #Animationdaki blend positionu güncelledik
