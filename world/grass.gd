@@ -5,7 +5,7 @@ const grass_effect = preload("res://effects/grass_effect.tscn") # effects'teki g
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	area_2d.area_entered.connect(_on_area_2d_area_entered)
+	area_2d.area_entered.connect(_on_area_2d_area_entered) #Areayı kod ile bağladık. Yukarıda sürükleyerek bağladığımız için debugger error veriyor. Güvenli olan kod ile bağlamak
 
 
 # Grass nodunda inspectorun sağındaki signalstan ekledik
