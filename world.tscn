@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8m0dvo8wpf2h" path="res://world/tree.tscn" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cek4ot35cssrp" path="res://world/dirt_tileset.png" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://2v2jfkesex6i" path="res://world/grass.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://crihuwsu5a4wd" path="res://enemies/bat_enemy.tscn" id="8_gbfbk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbse"]
 texture = ExtResource("5_036b0")
@@ -492,5 +493,33 @@ position = Vector2(568, 72)
 
 [node name="Grass13" parent="." unique_id=1528779787 instance=ExtResource("7_pkg7o")]
 position = Vector2(568, 88)
+
+[node name="BatEnemy" parent="." unique_id=185148132 node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
+position = Vector2(352, 136)
+player = NodePath("../Player")
+
+[node name="BatEnemy2" parent="." unique_id=985292226 node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
+position = Vector2(176, 176)
+player = NodePath("../Player")
+
+[node name="BatEnemy3" parent="." unique_id=733223357 node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
+position = Vector2(384, 256)
+player = NodePath("../Player")
+
+[node name="BatEnemy4" parent="." unique_id=919649936 node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
+position = Vector2(72, 216)
+player = NodePath("../Player")
+
+[node name="BatEnemy5" parent="." unique_id=2015000419 node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
+position = Vector2(48, 216)
+player = NodePath("../Player")
+
+[node name="BatEnemy6" parent="." unique_id=671337416 node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
+position = Vector2(48, 200)
+player = NodePath("../Player")
+
+[node name="BatEnemy7" parent="." unique_id=501751528 node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
+position = Vector2(72, 200)
+player = NodePath("../Player")
 
 [editable path="Player"]

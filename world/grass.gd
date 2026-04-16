@@ -1,7 +1,8 @@
 extends Node2D
 @export var area_2d: Area2D # option + drag ile Area2D'yi buraya attık.
 
-const grass_effect = preload("res://effects/grass_effect.tscn") # effects'teki grass effecte eriştik
+# const grass_effect = preload("res://effects/grass_effect.tscn") # effects'teki grass effecte eriştik
+@export var grass_effect: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
