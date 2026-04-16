@@ -1,4 +1,4 @@
-class_name Player extends CharacterBody2D # Scripte "Player" adını koyarak onu global scope'ye koymuş olduk
+class_name Player extends CharacterBody2D # Scripte "Player" adını koyarak onu global scop
 
 
 const speed = 100.0

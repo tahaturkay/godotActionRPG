@@ -56,14 +56,18 @@ animation = &"fly"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_erta8"]
+advance_mode = 2
+advance_expression = "is_player_in_range()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ww8v4"]
+advance_mode = 2
+advance_expression = "not is_player_in_range()"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_boacx"]
 states/Chase/node = SubResource("AnimationNodeAnimation_e7gs6")
 states/Chase/position = Vector2(474.125, 219.5)
 states/Idle/node = SubResource("AnimationNodeAnimation_5gx0a")
-states/Idle/position = Vector2(475, 100)
+states/Idle/position = Vector2(474.5625, 99.5)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_grp10"), "Idle", "Chase", SubResource("AnimationNodeStateMachineTransition_erta8"), "Chase", "Idle", SubResource("AnimationNodeStateMachineTransition_ww8v4")]
 graph_offset = Vector2(94, 80)
 
