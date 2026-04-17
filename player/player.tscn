@@ -531,7 +531,7 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_g1dw6")
 nodes/TimeScale/position = Vector2(310, 270)
 node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"StateMachine"]
 
-[node name="Player" type="CharacterBody2D" unique_id=518857167]
+[node name="Player" type="CharacterBody2D" unique_id=518857167 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_rkbax")
 

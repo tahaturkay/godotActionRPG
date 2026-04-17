@@ -72,12 +72,12 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(94, 80)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_f4281"]
-graph_offset = Vector2(-198.35838, 34.65026)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_boacx")
 nodes/StateMachine/position = Vector2(40, 140)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="BatEnemy" type="CharacterBody2D" unique_id=185148132]
+motion_mode = 1
 script = ExtResource("1_5gx0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1110401643]
