@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bgostxwteaxyu" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d1ccrq8tw1qyv" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://cqq1j3idc7wnt" path="res://shadows/medium_shadow.png" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://ckmohm0yc3jc1" path="res://damage_boxes/hitbox.gd" id="4_yw30f"]
 
 [sub_resource type="Animation" id="Animation_rkbax"]
 length = 0.6
@@ -22,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
+tracks/1/path = NodePath("HitBox/CollisionPolygon2D:polygon")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -51,7 +52,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
+tracks/1/path = NodePath("HitBox/CollisionPolygon2D:polygon")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -80,7 +81,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
+tracks/1/path = NodePath("HitBox/CollisionPolygon2D:polygon")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -109,7 +110,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
+tracks/1/path = NodePath("HitBox/CollisionPolygon2D:polygon")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -138,7 +139,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionPolygon2D:polygon")
+tracks/1/path = NodePath("HitBox/CollisionPolygon2D:polygon")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -570,6 +571,10 @@ position = Vector2(0, 1)
 scale = Vector2(1.0625, 1)
 texture = ExtResource("3_g1dw6")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=627631397]
+[node name="HitBox" type="Area2D" parent="." unique_id=1927807667]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("4_yw30f")
+metadata/_custom_type_script = "uid://ckmohm0yc3jc1"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1019544315]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=1019544315]

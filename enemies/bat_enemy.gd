@@ -9,7 +9,13 @@ const speed = 30.0
 @export var player: Player # Globel scope'de type olarak oluşturulan player'i düşmanımıza inspectordan atayabiliyoruz world sahnesinde
 @onready var playback = animation_tree.get("parameters/StateMachine/playback") as AnimationNodeStateMachinePlayback
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var hurt_box: HurtBox = $HurtBox
 
+func _ready() -> void:
+	hurt_box.hurt.connect(func(other_hitbox: HitBox):
+		queue_free()
+	)
+		
 
 """func _ready() -> void: 
 	animation_tree.active = true 
