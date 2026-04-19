@@ -1,5 +1,6 @@
 extends CharacterBody2D
 const speed = 30.0
+const friction = 500
 
 @export var range: = 128
 
@@ -12,9 +13,7 @@ const speed = 30.0
 @onready var hurt_box: HurtBox = $HurtBox
 
 func _ready() -> void:
-	hurt_box.hurt.connect(func(other_hitbox: HitBox):
-		queue_free()
-	)
+	hurt_box.hurt.connect(take_hit.call_deferred)
 		
 
 """func _ready() -> void: 
@@ -25,16 +24,25 @@ func _physics_process(delta: float) -> void:
 	var state = playback.get_current_node()
 
 	match state:
-		"Idle": pass
-		"Chase":
+		"IdleState": pass
+		"ChaseState":
 			var player = get_player()
 			if player is Player:
 				velocity = global_position.direction_to(player.global_position) * speed # direction_to bize normalized vector verir
 				sprite_2d.scale.x = sign(velocity.x)
 			else:
 				velocity = Vector2.ZERO
-			
 			move_and_slide()
+		"HitState":
+			velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+			move_and_slide()
+
+func take_hit(other_hitbox: HitBox)-> void:
+	velocity = other_hitbox.knockBackDirection * other_hitbox.knockBackAmount
+	playback.start("HitState")
+	print("Changed due to hit state")
+		
+
 func get_player() -> Player:
 	return get_tree().get_first_node_in_group("player")
 

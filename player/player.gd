@@ -9,6 +9,8 @@ var last_input_vector: = Vector2.ZERO
 
 @onready var animation_tree: AnimationTree = $AnimationTree #command+sol click ile animationTree'yi buraya attık
 var playback: AnimationNodeStateMachinePlayback #onready olsaydı animation_tree hazır olmadan bunu açmaya çalışıcaktı
+
+
 func _ready() -> void: 
 	animation_tree.active = true 
 	playback = animation_tree.get("parameters/StateMachine/playback") # Animation_tree deki statemachine içindeki stateler'i playback kapsıyor
